@@ -30,7 +30,7 @@ function EmployeeRepository(dbContext) {
 
             parameters.push({ name: 'Salary', type: TYPES.Int, val: req.query.salary });
 
-            var query = "select * from tbl_employee where salary>=@Salary"
+            var query = "select * from tbl_employee"
 
             dbContext.getQuery(query, parameters, false, function (error, data) {
                 return res.json(response(data, error));
